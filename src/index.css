@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EcoFinds Sustainable Marketplace Design System
+All colors MUST be HSL. Eco-themed green design with beautiful gradients.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 160 12% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 12% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 12% 12%;
+
+    --primary: 145 63% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 145 63% 62%;
+
+    --secondary: 142 76% 92%;
+    --secondary-foreground: 160 12% 12%;
+
+    --muted: 142 30% 95%;
+    --muted-foreground: 160 8% 45%;
+
+    --accent: 142 76% 88%;
+    --accent-foreground: 160 12% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 142 30% 88%;
+    --input: 142 30% 88%;
+    --ring: 145 63% 42%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+
+    /* Eco gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(145 63% 42%), hsl(145 63% 62%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 92%), hsl(142 76% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(145 63% 42%) 0%, hsl(142 76% 36%) 50%, hsl(120 60% 30%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(142 30% 98%));
+
+    /* Shadows with eco theme */
+    --shadow-eco: 0 10px 30px -10px hsl(145 63% 42% / 0.2);
+    --shadow-eco-hover: 0 20px 40px -10px hsl(145 63% 42% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(145 20% 20% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 160 20% 8%;
+    --foreground: 142 30% 95%;
+
+    --card: 160 18% 10%;
+    --card-foreground: 142 30% 95%;
+
+    --popover: 160 18% 10%;
+    --popover-foreground: 142 30% 95%;
+
+    --primary: 145 63% 55%;
+    --primary-foreground: 160 20% 8%;
+    --primary-glow: 145 63% 70%;
+
+    --secondary: 160 15% 15%;
+    --secondary-foreground: 142 30% 95%;
+
+    --muted: 160 15% 15%;
+    --muted-foreground: 142 20% 60%;
+
+    --accent: 160 15% 18%;
+    --accent-foreground: 142 30% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 20%;
+    --input: 160 15% 15%;
+    --ring: 145 63% 55%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 93% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(145 63% 55%), hsl(145 63% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160 15% 15%), hsl(160 15% 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(145 63% 55%) 0%, hsl(142 76% 45%) 50%, hsl(120 60% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(160 18% 10%), hsl(160 15% 12%));
+
+    /* Dark shadows */
+    --shadow-eco: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+    --shadow-eco-hover: 0 20px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Eco marketplace utilities */
+  .eco-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .eco-shadow {
+    box-shadow: var(--shadow-eco);
+  }
+
+  .eco-shadow-hover {
+    box-shadow: var(--shadow-eco-hover);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-smooth hover:translate-y-[-2px] hover:shadow-lg;
+  }
+
+  .hover-scale {
+    @apply transition-smooth hover:scale-105;
+  }
+
+  /* Cart popup animation */
+  .cart-popup {
+    @apply opacity-0 scale-95 translate-y-2 transition-all duration-200 ease-out;
+  }
+
+  .cart-popup.show {
+    @apply opacity-100 scale-100 translate-y-0;
+  }
+}
